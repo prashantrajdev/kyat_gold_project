@@ -41,7 +41,7 @@ class dashboardpagestate extends State<DashboardPage>{
                   Expanded(
                     flex: 2,
                     child:Container(
-                      color: Color.fromARGB(255, 166, 206, 227),
+                      color: const Color.fromARGB(255, 166, 206, 227),
                       child: _creatmenu(),
                       
 
@@ -235,9 +235,9 @@ class dashboardpagestate extends State<DashboardPage>{
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text("Group Name"),
               ),
-              Container(
-                height: 30,
-                width: 250,
+              SizedBox(
+                height: 35,
+                width: 300,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextField(
@@ -257,9 +257,9 @@ class dashboardpagestate extends State<DashboardPage>{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Group Start Date"),
-                          Container(
-                            height: 30,
-                            width: 250,
+                          SizedBox(
+                            height: 35,
+                            width: 300,
                             child: TextField(
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(
@@ -275,9 +275,9 @@ class dashboardpagestate extends State<DashboardPage>{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Group End Date"),
-                          Container(
-                            height: 30,
-                            width: 250,
+                          SizedBox(
+                            height: 35,
+                            width: 300,
                             child: TextField(
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(
@@ -306,9 +306,9 @@ class dashboardpagestate extends State<DashboardPage>{
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text("Duration"),
               ),
-              Container(
-                height: 30,
-                width: 250,
+              SizedBox(
+                height: 35,
+                width: 300,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextField(
@@ -328,8 +328,8 @@ class dashboardpagestate extends State<DashboardPage>{
                         children: [
                           const Text("Total Participants"),
                           Container(
-                            height: 30,
-                            width: 250,
+                            height: 35,
+                            width: 300,
                             child: TextField(
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(
@@ -345,9 +345,9 @@ class dashboardpagestate extends State<DashboardPage>{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Monthly Reccuring Amount"),
-                          Container(
-                            height: 30,
-                            width: 250,
+                          SizedBox(
+                            height: 35,
+                            width: 300,
                             child: TextField(
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(
@@ -376,9 +376,9 @@ class dashboardpagestate extends State<DashboardPage>{
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text("Banner"),
               ),
-              Container(
-                height: 30,
-                width: 250,
+              SizedBox(
+                height: 35,
+                width: 300,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextField(
@@ -397,9 +397,9 @@ class dashboardpagestate extends State<DashboardPage>{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Winner Announcement Date"),
-                          Container(
-                            height: 30,
-                            width: 250,
+                          SizedBox(
+                            height: 35,
+                            width: 300,
                             child: TextField(
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(
@@ -415,9 +415,9 @@ class dashboardpagestate extends State<DashboardPage>{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Featured Group"),
-                          Container(
-                            height: 30,
-                            width: 250,
+                          SizedBox(
+                            height: 35,
+                            width: 300,
                             child: TextField(
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(
@@ -446,12 +446,14 @@ class dashboardpagestate extends State<DashboardPage>{
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text("Description"),
               ),
-              Container(
-                height: 80,
-                width: 1040,
+              SizedBox(
+              
+                width: 1140,
+                
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextField(
+                    maxLines: 4,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,
                     ),
@@ -1622,7 +1624,7 @@ class dashboardpagestate extends State<DashboardPage>{
                   const Text("Product Tag Name"),
 
                 const SizedBox(height: 15,),
-                  Container(
+                  SizedBox(
                     height: 35,
                     width: 300,
                     child: TextField(
@@ -1644,7 +1646,7 @@ class dashboardpagestate extends State<DashboardPage>{
                   const Text("Product Tag Description"),
 
                 const SizedBox(height: 15,),
-                  Container(
+                  SizedBox(
                     height: 35,
                     width: 650,
                     child: TextField(
@@ -1667,17 +1669,23 @@ class dashboardpagestate extends State<DashboardPage>{
           
         ),
         Column(
+          
               children: [
-                Container(
+                SizedBox(
                   height: 40,
                   width: 300,
-                  child: ElevatedButton(
-                    child:const Text("Add Product Tags",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),onPressed: () {
-                      debugPrint("Button Clicked");
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 70),
+                    child: ElevatedButton(
+                      child:const Text("Add Product Tags",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),onPressed: () {
+                        debugPrint("Button Clicked");
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        return const DashboardPage();
+                      }));
                     
-
-                    
-                    },),
+                      
+                      },),
+                  ),
                   
                 ),
               ],
@@ -1714,7 +1722,7 @@ class dashboardpagestate extends State<DashboardPage>{
                 const SizedBox(height: 30,),
                 Padding(
                   padding: const EdgeInsets.only(left: 20),
-                  child: Container(
+                  child: SizedBox(
                     height: 35,
                     width: 1100,
                     child:TextField(
@@ -1811,8 +1819,8 @@ class dashboardpagestate extends State<DashboardPage>{
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Text("Minimum Order Value"),
               ),
-              Container(
-                height: 30,
+              SizedBox(
+                height: 35,
                 width: 300,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -1835,8 +1843,8 @@ class dashboardpagestate extends State<DashboardPage>{
                             padding: EdgeInsets.symmetric(horizontal: 20),
                             child: Text("Set Cupon Discount Type"),
                           ),
-                          Container(
-                            height: 30,
+                          SizedBox(
+                            height: 35,
                             width: 300,
                             child: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -1856,8 +1864,8 @@ class dashboardpagestate extends State<DashboardPage>{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Discount Value"),
-                          Container(
-                            height: 30,
+                          SizedBox(
+                            height: 35,
                             width: 300,
                             child: TextField(
                               decoration: InputDecoration(
@@ -1890,8 +1898,8 @@ class dashboardpagestate extends State<DashboardPage>{
                 ),
                
               
-              Container(
-                height: 30,
+              SizedBox(
+                height: 35,
                 width: 300,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -1907,13 +1915,15 @@ class dashboardpagestate extends State<DashboardPage>{
               
               Padding(
                 padding: const EdgeInsets.only(left: 880),
-                child: Container(
+                child: SizedBox(
                     height: 40,
                     width: 300,
                     child: ElevatedButton(
                       child:const Text("Add Product Tags",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),onPressed: () {
                         debugPrint("Button Clicked");
-                      
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                      return const DashboardPage();
+                      }));
                 
                       
                       },),
@@ -1963,6 +1973,844 @@ class dashboardpagestate extends State<DashboardPage>{
 
    
     
+  }
+  else if(menu=="Eleven Menu"){
+    return Center(
+      child:Container( color: const Color.fromARGB(255, 197, 215, 255),
+        width: double.infinity,
+        height: 700,
+        child:SingleChildScrollView(
+        child:  Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(22),
+              child: Text("Collection",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 30),
+              child: Text("Add Collection",style: TextStyle(fontWeight: FontWeight.bold),),
+            ),
+             Row(
+          children: [
+            Padding(
+              padding:  const EdgeInsets.all(40),
+              child: Expanded(child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   const Text("Collection Name"),
+
+                 const SizedBox(height: 15,),
+                  SizedBox(
+                    height: 35,
+                    width: 700,
+                    child: TextField(
+                      decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true),
+                    ),
+                  ),
+                  
+                ],
+              
+              ),
+              ),
+            ),
+            Padding(
+              padding:  const EdgeInsets.all(40),
+              child: Expanded(child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   const Text("Select Category Type"),
+
+                 const SizedBox(height: 15,),
+                  SizedBox(
+                    height: 35,
+                    width: 360,
+                    child: TextField(
+                      decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true),
+                    ),
+                  ),
+                  ],
+              
+              ),
+              ),
+            ),
+           
+          ], 
+          ),
+          Container(
+            child:  Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 40),
+                  child: Text("Collection Description"),
+                ),
+                const SizedBox(height: 20,),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40,right: 40,),
+                  child: SizedBox(
+                    width: double.infinity,
+                    
+                    child: TextField(
+                      maxLines: 5,
+                      decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          
+                const SizedBox(height: 20,),
+                const Padding(
+                  padding: EdgeInsets.only(left: 40),
+                  child: Text("Collection Banner Images"),
+                ),
+                const SizedBox(height: 20,),
+             Padding(
+               padding: const EdgeInsets.only(left: 40),
+               child: ElevatedButton(onPressed: (){
+                debugPrint("Button Clicked");
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return const DashboardPage();
+               
+                }));
+               
+                           }, child: const Text("Upload Images"),),
+             ),
+             const SizedBox(height: 20,),
+             const Padding(
+               padding: EdgeInsets.only(left: 40),
+               child: Text("No Image Selected"),
+             ),
+            
+              
+                const SizedBox(height: 20,),
+                Align(
+                      alignment: Alignment.topRight,
+                  child: ElevatedButton(onPressed: (){
+                    debugPrint("Button Clicked");
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                      return const DashboardPage();
+                  
+                    }));
+                  }, child: const Text("Add Collection"),),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(40),
+                  child: Text("Collection List",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),),
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Spacer(),
+                    Text("Colllection Id",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                    Spacer(),
+                     Text("Colllection Name",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                     Spacer(),
+                      Text("Category Type",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                      Spacer(),
+                       Text("Category Description",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                       Spacer(),
+                        Text("Created At",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                        Spacer(),
+                         Text("View Colllection Image",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                         Spacer(),
+                          Text("Delete Collection",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                          Spacer(),
+                    
+                    
+                  ],
+                ),
+              
+             
+
+           
+          
+          
+            
+          ],
+          
+          
+        ),
+
+      ),
+    ),);
+  }
+  else if(menu=="Twelve Menu"){
+    return Center(
+      child: Container(color: const Color.fromARGB(255, 197, 215, 255),
+      width: double.infinity,
+      height: 1200,
+      child:SingleChildScrollView(
+      child:  Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(30),
+            child: Text("Add New Product",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+          ),
+          const SizedBox(),
+          const Padding(
+            padding: EdgeInsets.only(left: 30),
+            child: Text("Product information",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+          ),
+           Row(
+          children: [
+            Padding(
+              padding:   const EdgeInsets.all(40),
+              child: Expanded(child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                    const Text("Product Name"),
+
+                  const SizedBox(height: 15,),
+                  SizedBox(
+                    height: 35,
+                    width: 700,
+                    child: TextField(
+                      decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true),
+                    ),
+                  ),
+                  
+                ],
+              
+              ),
+              ),
+            ),
+            Padding(
+              padding:  const EdgeInsets.all(40),
+              child: Expanded(child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   const Text("short Description"),
+
+                  const SizedBox(height: 15,),
+                  SizedBox(
+                    height: 35,
+                    width: 360,
+                    child: TextField(
+                      decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true),
+                    ),
+                  ),
+                  ],
+              
+              ),
+              ),
+            ),
+           
+          ], 
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+               const Padding(
+                padding: EdgeInsets.only(left: 40),
+                child: Text("Long Description"),
+              ),
+               const SizedBox(height: 20,),
+              Padding(
+                padding:  const EdgeInsets.only(left: 40,right: 40,),
+                child: SizedBox(
+                  width: double.infinity,
+                  
+                  child: TextField(
+                    maxLines: 5,
+                    decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20,),
+              const Padding(
+                padding: EdgeInsets.only(left: 40),
+                child: Text("Product Info"),
+              ),
+              const SizedBox(height: 20,),
+               Padding(
+                 padding: const EdgeInsets.only(left: 40,right: 40),
+                 child: SizedBox(
+                  width: double.infinity,
+                  child: TextField(
+                    maxLines: 5,
+                    decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true),
+                  ),
+                 
+                               ),
+               ),
+               Row(
+          children: [
+            Expanded(child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 60,),
+              
+              const Padding(
+                padding: EdgeInsets.only(left: 40),
+                child: Text("Dimension"),
+              ),
+              SizedBox(
+                height: 30,
+                width: 300,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                      fillColor: Colors.white,filled:true, 
+                    ),
+                  ),
+                ),
+
+              )
+            ], 
+            ),),
+              Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("SKU Code"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                      Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("Quantity"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    
+                    
+
+
+
+
+          ],
+          
+        ),
+         Row(
+          children: [
+            Expanded(child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 60,),
+              
+              const Padding(
+                padding: EdgeInsets.only(left: 40),
+                child: Text("Price"),
+              ),
+              SizedBox(
+                height: 30,
+                width: 300,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                      fillColor: Colors.white,filled:true, 
+                    ),
+                  ),
+                ),
+
+              )
+            ], 
+            ),),
+              Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("Making Charges"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                      Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("GST"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    
+                    
+
+
+
+
+          ],
+          
+        ),
+         Row(
+          children: [
+            Expanded(child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 60,),
+              
+              const Padding(
+                padding: EdgeInsets.only(left: 40),
+                child: Text("Discount Percentage"),
+              ),
+              SizedBox(
+                height: 30,
+                width: 300,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                      fillColor: Colors.white,filled:true, 
+                    ),
+                  ),
+                ),
+
+              )
+            ], 
+            ),),
+              Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("Discount Amount"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                      Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("Product Type"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    
+                    
+
+
+
+
+          ],
+          
+        ),
+         Row(
+          children: [
+            Expanded(child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 60,),
+              
+              const Padding(
+                padding: EdgeInsets.only(left: 40),
+                child: Text("Metal Type"),
+              ),
+              SizedBox(
+                height: 30,
+                width: 300,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                      fillColor: Colors.white,filled:true, 
+                    ),
+                  ),
+                ),
+
+              )
+            ], 
+            ),),
+              Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("Metal Purity"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                      Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("Metal Weight in Grams"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    
+                    
+
+
+
+
+          ],
+          
+        ),
+         Row(
+          children: [
+            Expanded(child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 60,),
+              
+              const Padding(
+                padding: EdgeInsets.only(left: 40),
+                child: Text("Metal Charges"),
+              ),
+              SizedBox(
+                height: 30,
+                width: 300,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                      fillColor: Colors.white,filled:true, 
+                    ),
+                  ),
+                ),
+
+              )
+            ], 
+            ),),
+              Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("Stone Type"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                      Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("Stone Grade"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    
+                    
+
+
+
+
+          ],
+          
+        ),
+         Row(
+          children: [
+            Expanded(child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 60,),
+              
+              const Padding(
+                padding: EdgeInsets.only(left: 40),
+                child: Text("Stone Weight in Gms"),
+              ),
+              SizedBox(
+                height: 30,
+                width: 300,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                      fillColor: Colors.white,filled:true, 
+                    ),
+                  ),
+                ),
+
+              )
+            ], 
+            ),),
+              Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("Stone Charges"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                      Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 60,),
+                          const Text("Features Product"),
+                          SizedBox(
+                            height: 30,
+                            width: 300,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,)
+                            ),
+                          ),
+                          
+                        ],
+                      ),
+                    ),
+                    
+                    
+                    
+
+
+
+
+          ],
+          
+        ),
+         Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 20,),
+            const Padding(
+              padding: EdgeInsets.only(left: 40),
+              child: Text("Product Images",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+            ),
+            const SizedBox(height: 20,),
+            Padding(
+              padding: const EdgeInsets.only(left: 35),
+              child: ElevatedButton(onPressed: (){
+                debugPrint("Button Clicked");
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return const DashboardPage();
+              
+                }
+                
+                ));
+              
+              
+              }, child: const Text("Choose Images")),
+            ),
+            const SizedBox(height: 10,),
+            const Padding(
+              padding: EdgeInsets.only(left: 40),
+              child: Text("Images"),
+            ),
+            const SizedBox(height: 20,),
+            const Padding(
+              padding: EdgeInsets.only(left: 40),
+              child: Text("No Images Selected"),
+            ),
+            const SizedBox(height: 20,),
+            const Padding(
+              padding: EdgeInsets.only(left: 30),
+              child: Text("Add Product Tags",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+            ),
+            const SizedBox(height: 20,),
+            const Padding(
+              padding: EdgeInsets.only(left: 40),
+              child: Text("Select Product Tags",),
+            ),
+            const SizedBox(height: 10,),
+             Padding(
+               padding: const EdgeInsets.only(left: 40),
+               child: SizedBox(
+                height: 35,
+                width: 350,
+                child: TextField(
+                  decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),fillColor: Colors.white,filled: true,hintText: "Select Product Tags",),textAlign: TextAlign.center,
+                  
+                ),
+                           ),
+             ),
+              Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              const SizedBox(height: 0,),
+                               Padding(
+                                 padding: const EdgeInsets.only(right: 20),
+                                 child: ElevatedButton(onPressed: (){
+                                  debugPrint("Button Clicked");
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                                    return const DashboardPage();
+                                  }));
+                                                               },
+                                 child: const Text("Add Product Tags"),),
+                               ),
+                              
+                              
+
+                             
+
+
+                            ],
+                          ),
+             const SizedBox(height: 20,),
+             const Padding(
+               padding: EdgeInsets.only(left: 40),
+               child: Text("Product Tags"),
+             ),const SizedBox(height: 20,),
+             Padding(
+               padding: const EdgeInsets.only(left: 20),
+               child: ElevatedButton(onPressed: (){
+                debugPrint("Button Clicked");
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return const DashboardPage();
+               
+                }));
+               },
+                child: const Text("Add Product"),),
+             ),
+
+          ],
+        )
+        
+
+            ],
+          ),
+          
+          
+
+        ],
+        
+      ),
+
+      ),),
+    );
+
+
   }
   
   else{menu=="Thirteen Menu";
